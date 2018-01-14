@@ -293,59 +293,59 @@ class AdminController extends Controller
         if($d) echo $m. "<br>";
     }
 
-    public function member_level()
-    {
-        $members = DB::select('select member.id,member.name,member.pancard, member_pv.all_act, member_pv.level, member_pv.highest from member join member_pv on member.id = member_pv.member_id inner join epin on member.id = epin.reg_id order by member.id desc');
-        $direct  = 0;
-        $data = [];
-        $debug = false;
-
-        foreach( $members as $m ){
-            $this->smsg($debug, $m->id . " starting calculation for next level ". ($m->level+1));
-            $team = DB::select('select member.id, member.name, member_pv.level from member join member_pv on member.id = member_pv.member_id inner join epin on member.id = epin.reg_id where member.s_id=? ORDER BY `member_pv`.`level` DESC, `member_pv`.`all_act`  DESC', [$m->id]);
-            $m->team = $team;
-            $this->smsg($debug, $m->id . " team count ".count($team));
-            $direct = count($team) - $m->level;
-            if($direct > 0){ // direct downline
-                $this->smsg($debug, $m->id . " has direct for next level.");
-                if($m->team[0]->level >= $m->level){ // direct highest level
-                    $this->smsg($debug, $m->id . " direct highest is in same level ". $m->level);
-                    $this->smsg($debug, $m->id . " has pv ".($m->all_act * 3000)." required pv for next level is ". Controller::level($m->level, 'pv'));
-                    if( ($m->all_act * 3000) >= Controller::level($m->level, 'pv')){ // total pv level level wise
-                        $this->smsg($debug, $m->id . " has passed all checks, next level - ".($m->level+1));
-
-                        $amount = Controller::level( $m->level, 'income');
-                        $admin_chrg = $amount * 0.1;
-//                        if ($m->pancard == '') {
-//                            $tds = $amount * 0.2;
-//                        } else {
-//                            $tds = $amount * 0.05;
-//                        }
-                        $tds = $amount * 0.05;
-                        $amount -= ($tds + $admin_chrg);
-                        $this->smsg($debug, $m->id . " Amount: ".$amount." TDS: ".$tds. " ADMIN: ".$admin_chrg);
-                        $m->account = ["amount"=>$amount, 'tds'=>$tds, 'admin'=>$admin_chrg];
-                        $m->level += 1;
-                        $m->highest = $m->team[0]->id;
-                        $data[] = $m;
-                        Account::create([
-                            'member_id' => $m->id,
-                            'title' => "Level Achievement Payment",
-                            'amount' => $amount,
-                            'type' => 'cr',
-                            'display' => 1,
-                            'admin_chrg' => $admin_chrg,
-                            'tds' => $tds,
-                            'total' => ($amount + $admin_chrg + $tds)
-                        ]);
-                        MemberPV::where('member_id', $m->id)->update(['level' => $m->level, 'highest' => $m->team[0]->id]);
-                    }
-                }
-            }
-        }
-
-        return view('admin.weekly', compact('data'));
-    }
+//    public function member_level()
+//    {
+//        $members = DB::select('select member.id,member.name,member.pancard, member_pv.all_act, member_pv.level, member_pv.highest from member join member_pv on member.id = member_pv.member_id inner join epin on member.id = epin.reg_id order by member.id desc');
+//        $direct  = 0;
+//        $data = [];
+//        $debug = false;
+//
+//        foreach( $members as $m ){
+//            $this->smsg($debug, $m->id . " starting calculation for next level ". ($m->level+1));
+//            $team = DB::select('select member.id, member.name, member_pv.level from member join member_pv on member.id = member_pv.member_id inner join epin on member.id = epin.reg_id where member.s_id=? ORDER BY `member_pv`.`level` DESC, `member_pv`.`all_act`  DESC', [$m->id]);
+//            $m->team = $team;
+//            $this->smsg($debug, $m->id . " team count ".count($team));
+//            $direct = count($team) - $m->level;
+//            if($direct > 0){ // direct downline
+//                $this->smsg($debug, $m->id . " has direct for next level.");
+//                if($m->team[0]->level >= $m->level){ // direct highest level
+//                    $this->smsg($debug, $m->id . " direct highest is in same level ". $m->level);
+//                    $this->smsg($debug, $m->id . " has pv ".($m->all_act * 3000)." required pv for next level is ". Controller::level($m->level, 'pv'));
+//                    if( ($m->all_act * 3000) >= Controller::level($m->level, 'pv')){ // total pv level level wise
+//                        $this->smsg($debug, $m->id . " has passed all checks, next level - ".($m->level+1));
+//
+//                        $amount = Controller::level( $m->level, 'income');
+//                        $admin_chrg = $amount * 0.1;
+////                        if ($m->pancard == '') {
+////                            $tds = $amount * 0.2;
+////                        } else {
+////                            $tds = $amount * 0.05;
+////                        }
+//                        $tds = $amount * 0.05;
+//                        $amount -= ($tds + $admin_chrg);
+//                        $this->smsg($debug, $m->id . " Amount: ".$amount." TDS: ".$tds. " ADMIN: ".$admin_chrg);
+//                        $m->account = ["amount"=>$amount, 'tds'=>$tds, 'admin'=>$admin_chrg];
+//                        $m->level += 1;
+//                        $m->highest = $m->team[0]->id;
+//                        $data[] = $m;
+//                        Account::create([
+//                            'member_id' => $m->id,
+//                            'title' => "Level Achievement Payment",
+//                            'amount' => $amount,
+//                            'type' => 'cr',
+//                            'display' => 1,
+//                            'admin_chrg' => $admin_chrg,
+//                            'tds' => $tds,
+//                            'total' => ($amount + $admin_chrg + $tds)
+//                        ]);
+//                        MemberPV::where('member_id', $m->id)->update(['level' => $m->level, 'highest' => $m->team[0]->id]);
+//                    }
+//                }
+//            }
+//        }
+//
+//        return view('admin.weekly', compact('data'));
+//    }
 
     public function club_pv()
     {
@@ -379,7 +379,7 @@ class AdminController extends Controller
         //return view('admin.weekly', compact('data'));
     }
 
-    public function new_member_level()
+    public function member_level()
     {
         $members = DB::select('select member.id,member.name, member_pv.all_act, member_pv.level, member_pv.highest, (SELECT COUNT(*) from member as t1 WHERE t1.s_id=member.id ) as `downline`, member_pv.club from member join member_pv on member.id = member_pv.member_id inner join epin on member.id = epin.reg_id order by member.id desc');
         $direct  = 0;
@@ -419,20 +419,19 @@ class AdminController extends Controller
                             $m->level += 1;
                             $m->club += 1;
                             $data[] = $m;
-//                            Account::create([
-//                                'member_id' => $m->id,
-//                                'title' => "Level Achievement Payment",
-//                                'amount' => $amount,
-//                                'type' => 'cr',
-//                                'display' => 1,
-//                                'admin_chrg' => $admin_chrg,
-//                                'tds' => $tds,
-//                                'total' => ($amount + $admin_chrg + $tds)
-//                            ]);
+                            Account::create([
+                                'member_id' => $m->id,
+                                'title' => "Level Achievement Payment",
+                                'amount' => $amount,
+                                'type' => 'cr',
+                                'display' => 1,
+                                'admin_chrg' => $admin_chrg,
+                                'tds' => $tds,
+                                'total' => ($amount + $admin_chrg + $tds)
+                            ]);
                             MemberPV::where('member_id', $m->id)->update(['level' => $m->level, 'club' => $m->club, 'highest' => $m->team[0]->id]);
                         }
                     }else{
-                        continue;
 
                         if($m->team[0]->level >= $m->level){ // direct highest level
                             $this->smsg($debug, $m->id . " direct highest is in same level ". $m->level);
