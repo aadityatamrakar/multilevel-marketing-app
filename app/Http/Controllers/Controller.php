@@ -20,13 +20,13 @@ class Controller extends BaseController
             ["name"=>"Team Manager", 'downline'=>2, 'pv'=>250000, 'income'=>2500],
             ["name"=>"Life Manager", 'downline'=>3, 'pv'=>500000, 'income'=>5000],
             ["name"=>"National Manager", 'downline'=>4, 'pv'=>1000000, 'income'=>10000],
-            ["name"=>"International Manager", 'downline'=>5, 'pv'=>2500000, 'income'=>0],
-            ["name"=>"World Manager", 'downline'=>6, 'pv'=>5000000, 'income'=>0],
-            ["name"=>"Global Manager", 'downline'=>7, 'pv'=>10000000, 'income'=>0],
-            ["name"=>"Double Manager", 'downline'=>8, 'pv'=>25000000, 'income'=>0],
-            ["name"=>"Triple Manager", 'downline'=>9, 'pv'=>50000000, 'income'=>0],
-            ["name"=>"Crown Manager", 'downline'=>10, 'pv'=>100000000, 'income'=>0],
-            ["name"=>"Royal Manager", 'downline'=>11, 'pv'=>250000000, 'income'=>0],
+            ["name"=>"International Manager", 'downline'=>5, 'pv'=>2500000, 'income'=>25000],
+            ["name"=>"World Manager", 'downline'=>6, 'pv'=>5000000, 'income'=>50000],
+            ["name"=>"Global Manager", 'downline'=>7, 'pv'=>10000000, 'income'=>100000],
+            ["name"=>"Double Manager", 'downline'=>8, 'pv'=>25000000, 'income'=>250000],
+            ["name"=>"Triple Manager", 'downline'=>9, 'pv'=>50000000, 'income'=>500000],
+            ["name"=>"Crown Manager", 'downline'=>10, 'pv'=>100000000, 'income'=>1000000],
+            ["name"=>"Royal Manager", 'downline'=>11, 'pv'=>250000000, 'income'=>2500000],
         ];
 
         return $level_info[$i]['name'];
@@ -41,13 +41,13 @@ class Controller extends BaseController
             ["name"=>"Team Manager", 'downline'=>2, 'pv'=>250000, 'income'=>2500],
             ["name"=>"Life Manager", 'downline'=>3, 'pv'=>500000, 'income'=>5000],
             ["name"=>"National Manager", 'downline'=>4, 'pv'=>1000000, 'income'=>10000],
-            ["name"=>"International Manager", 'downline'=>5, 'pv'=>2500000, 'income'=>0], // 5
-            ["name"=>"World Manager", 'downline'=>6, 'pv'=>5000000, 'income'=>0],
-            ["name"=>"Global Manager", 'downline'=>7, 'pv'=>10000000, 'income'=>0],
-            ["name"=>"Double Manager", 'downline'=>8, 'pv'=>25000000, 'income'=>0],
-            ["name"=>"Triple Manager", 'downline'=>9, 'pv'=>50000000, 'income'=>0],
-            ["name"=>"Crown Manager", 'downline'=>10, 'pv'=>100000000, 'income'=>0],
-            ["name"=>"Royal Manager", 'downline'=>11, 'pv'=>250000000, 'income'=>0],
+            ["name"=>"International Manager", 'downline'=>5, 'pv'=>2500000, 'income'=>25000],
+            ["name"=>"World Manager", 'downline'=>6, 'pv'=>5000000, 'income'=>50000],
+            ["name"=>"Global Manager", 'downline'=>7, 'pv'=>10000000, 'income'=>100000],
+            ["name"=>"Double Manager", 'downline'=>8, 'pv'=>25000000, 'income'=>250000],
+            ["name"=>"Triple Manager", 'downline'=>9, 'pv'=>50000000, 'income'=>500000],
+            ["name"=>"Crown Manager", 'downline'=>10, 'pv'=>100000000, 'income'=>1000000],
+            ["name"=>"Royal Manager", 'downline'=>11, 'pv'=>250000000, 'income'=>2500000],
         ];
 
         return $level_info[$i][$v];
