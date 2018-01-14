@@ -1,0 +1,398 @@
+body {
+    color: #5a5a5a;
+}
+
+.bg-sunrise{
+    background: #FF512F; /* fallback for old browsers */
+    background: -webkit-linear-gradient(#FF512F , #F09819); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#FF512F , #F09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+section {
+    padding: 50px 0;
+}
+section h2 {
+    font-size: 50px;
+}
+section.download {
+    padding: 150px 0;
+    position: relative;
+}
+section.download h2 {
+    margin-top: 0;
+    font-size: 50px;
+}
+section.download .badges .badge-link {
+    display: block;
+    margin-bottom: 25px;
+}
+section.download .badges .badge-link:last-child {
+    margin-bottom: 0;
+}
+section.download .badges .badge-link img {
+    height: 60px;
+}
+@media (min-width: 768px) {
+    section.download .badges .badge-link {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 768px) {
+    section.download h2 {
+        font-size: 70px;
+    }
+}
+section.features .section-heading {
+    margin-bottom: 100px;
+}
+section.features .section-heading h2 {
+    margin-top: 0;
+}
+section.features .section-heading p {
+    margin-bottom: 0;
+}
+section.features .device-container,
+section.features .feature-item {
+    max-width: 300px;
+    margin: 0 auto;
+}
+section.features .device-container {
+    margin-bottom: 100px;
+}
+@media (min-width: 992px) {
+    section.features .device-container {
+        margin-bottom: 0;
+    }
+}
+section.features .feature-item {
+    text-align: center;
+    margin-bottom: 100px;
+}
+section.features .feature-item h3 {
+    font-size: 30px;
+}
+section.features .feature-item i {
+    font-size: 80px;
+    background: -webkit-linear-gradient(to left, #7b4397, #dc2430);
+    background: linear-gradient(to left, #7b4397, #dc2430);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@media (min-width: 992px) {
+    section.features .device-container,
+    section.features .feature-item {
+        max-width: none;
+    }
+}
+section.cta {
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-image: url('../img/bg-cta.jpg');
+    padding: 250px 0;
+}
+section.cta .cta-content {
+    position: relative;
+    z-index: 1;
+}
+section.cta .cta-content h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: white;
+    max-width: 450px;
+    font-size: 50px;
+}
+@media (min-width: 768px) {
+    section.cta .cta-content h2 {
+        font-size: 80px;
+    }
+}
+section.cta .overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+section.contact {
+    text-align: center;
+}
+section.contact h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+section.contact h2 i {
+    color: #dd4b39;
+}
+section.contact ul.list-social {
+    margin-bottom: 0;
+}
+section.contact ul.list-social li a {
+    display: block;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    font-size: 40px;
+    border-radius: 100%;
+    color: white;
+}
+section.contact ul.list-social li.social-twitter a {
+    background-color: #1da1f2;
+}
+section.contact ul.list-social li.social-twitter a:hover {
+    background-color: #0d95e8;
+}
+section.contact ul.list-social li.social-facebook a {
+    background-color: #3b5998;
+}
+section.contact ul.list-social li.social-facebook a:hover {
+    background-color: #344e86;
+}
+section.contact ul.list-social li.social-google-plus a {
+    background-color: #dd4b39;
+}
+section.contact ul.list-social li.social-google-plus a:hover {
+    background-color: #d73925;
+}
+
+section p {
+    font-size: 16px;
+}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
+
+footer { background-color:#0c1a1e; min-height:250px; }
+.footerleft { margin-top:50px; padding:0 36px; }
+.logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
+
+.footerleft p { color:#fff; font-size:14px !important; margin-bottom:15px;}
+.footerleft p i { width:20px; color:#999;}
+
+
+.paddingtop-bottom {  margin-top:50px;}
+.footer-ul { list-style-type:none;  padding-left:0px; margin-left:2px;}
+.footer-ul li { line-height:29px; font-size:14px;}
+.footer-ul li a { color:#a0a3a4; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
+.footer-ul i { margin-right:10px;}
+.footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
+
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.icon-ul { list-style-type:none !important; margin:0px; padding:0px;}
+.icon-ul li { line-height:75px; width:100%; float:left;}
+.icon { float:left; margin-right:5px;}
+
+.copyright { min-height:40px; background-color:#000000;}
+.copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0px;}
+.heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
+.post p { font-size:14px; color:#FFF; line-height:20px;}
+.post p span { display:block; color:#8f8f8f;}
+.bottom_ul { list-style-type:none; float:right; margin-bottom:0px;}
+.bottom_ul li { float:left; line-height:40px;}
+.bottom_ul li:after { content:"/"; color:#FFF; margin-right:8px; margin-left:8px;}
+.bottom_ul li a { color:#FFF;  font-size:14px;}
+
+.col-form-label{
+    font-size: 20px;
+    text-align: right;
+}
+
+.bg-dark{
+    background: #232526!important;  /* fallback for old browsers */
+}
+.bg-dark-g{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Credit to bootsnipp.com for the css for the color graph */
+.colorgraph {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+.navbar-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+.navbar-wrapper .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+    width: auto;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+@media( min-width: 768px){
+    .carousel {
+        height: 350px;
+        max-height: 350px;
+    }
+}
+@media( max-width: 768px){
+    .carousel {
+        height: 200px;
+        max-height: 350px;
+    }
+}
+
+.carousel .carousel-inner{
+    height: 100%;
+    max-height: 350px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+    height: 100%;
+    max-height: 350px;
+    background-color: #777;
+}
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    max-height: 350px;
+    height: 100%;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: normal;
+}
+.marketing .col-lg-4 p {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /* Navbar positioning foo */
+    .navbar-wrapper {
+        margin-top: 20px;
+    }
+    .navbar-wrapper .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .navbar-wrapper .navbar {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    /* The navbar becomes detached from the top, so we round the corners */
+    .navbar-wrapper .navbar {
+        border-radius: 4px;
+    }
+
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .featurette-heading {
+        margin-top: 120px;
+    }
+}
+
+@media (min-width: 992px) {
+    .developer{
+        text-align: right !important;
+    }
+}
+@media (min-width: 768px) {
+    .developer{
+        text-align: center !important;
+    }
+}
+
+.market_img{
+    background: url('/img/bg.png') no-repeat;
+    background-size: contain;
+}
